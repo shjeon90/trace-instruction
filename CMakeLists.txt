@@ -9,4 +9,4 @@ include_directories(${PIN_ROOT}/source/include/pin/gen)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(trace_addr main.cpp)
+add_executable(trace_addr trace-instruction.cpp)

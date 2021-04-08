@@ -88,7 +88,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/horo90/CLionProjects/trace-addr/main.cpp">
+		<Unit filename="/home/horo90/CLionProjects/trace-addr/trace-instruction.cpp">
 			<Option target="trace_addr"/>
 		</Unit>
 		<Unit filename="/home/horo90/CLionProjects/trace-addr/CMakeLists.txt">

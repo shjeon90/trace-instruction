@@ -76,27 +76,27 @@ include CMakeFiles/trace_addr.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/trace_addr.dir/flags.make
 
-CMakeFiles/trace_addr.dir/main.cpp.o: CMakeFiles/trace_addr.dir/flags.make
-CMakeFiles/trace_addr.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/horo90/CLionProjects/trace-addr/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trace_addr.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trace_addr.dir/main.cpp.o -c /home/horo90/CLionProjects/trace-addr/main.cpp
+CMakeFiles/trace_addr.dir/trace-instruction.cpp.o: CMakeFiles/trace_addr.dir/flags.make
+CMakeFiles/trace_addr.dir/trace-instruction.cpp.o: ../trace-instruction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/horo90/CLionProjects/trace-addr/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trace_addr.dir/trace-instruction.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trace_addr.dir/trace-instruction.cpp.o -c /home/horo90/CLionProjects/trace-addr/trace-instruction.cpp
 
-CMakeFiles/trace_addr.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trace_addr.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/horo90/CLionProjects/trace-addr/main.cpp > CMakeFiles/trace_addr.dir/main.cpp.i
+CMakeFiles/trace_addr.dir/trace-instruction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trace_addr.dir/trace-instruction.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/horo90/CLionProjects/trace-addr/trace-instruction.cpp > CMakeFiles/trace_addr.dir/trace-instruction.cpp.i
 
-CMakeFiles/trace_addr.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trace_addr.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/horo90/CLionProjects/trace-addr/main.cpp -o CMakeFiles/trace_addr.dir/main.cpp.s
+CMakeFiles/trace_addr.dir/trace-instruction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trace_addr.dir/trace-instruction.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/horo90/CLionProjects/trace-addr/trace-instruction.cpp -o CMakeFiles/trace_addr.dir/trace-instruction.cpp.s
 
 # Object files for target trace_addr
 trace_addr_OBJECTS = \
-"CMakeFiles/trace_addr.dir/main.cpp.o"
+"CMakeFiles/trace_addr.dir/trace-instruction.cpp.o"
 
 # External object files for target trace_addr
 trace_addr_EXTERNAL_OBJECTS =
 
-trace_addr: CMakeFiles/trace_addr.dir/main.cpp.o
+trace_addr: CMakeFiles/trace_addr.dir/trace-instruction.cpp.o
 trace_addr: CMakeFiles/trace_addr.dir/build.make
 trace_addr: CMakeFiles/trace_addr.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/horo90/CLionProjects/trace-addr/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable trace_addr"

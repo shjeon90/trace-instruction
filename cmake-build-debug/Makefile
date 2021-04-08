@@ -142,32 +142,32 @@ trace_addr/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_addr.dir/build.make CMakeFiles/trace_addr.dir/build
 .PHONY : trace_addr/fast
 
-main.o: main.cpp.o
+trace-instruction.o: trace-instruction.cpp.o
 
-.PHONY : main.o
+.PHONY : trace-instruction.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_addr.dir/build.make CMakeFiles/trace_addr.dir/main.cpp.o
-.PHONY : main.cpp.o
+trace-instruction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_addr.dir/build.make CMakeFiles/trace_addr.dir/trace-instruction.cpp.o
+.PHONY : trace-instruction.cpp.o
 
-main.i: main.cpp.i
+trace-instruction.i: trace-instruction.cpp.i
 
-.PHONY : main.i
+.PHONY : trace-instruction.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_addr.dir/build.make CMakeFiles/trace_addr.dir/main.cpp.i
-.PHONY : main.cpp.i
+trace-instruction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_addr.dir/build.make CMakeFiles/trace_addr.dir/trace-instruction.cpp.i
+.PHONY : trace-instruction.cpp.i
 
-main.s: main.cpp.s
+trace-instruction.s: trace-instruction.cpp.s
 
-.PHONY : main.s
+.PHONY : trace-instruction.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_addr.dir/build.make CMakeFiles/trace_addr.dir/main.cpp.s
-.PHONY : main.cpp.s
+trace-instruction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_addr.dir/build.make CMakeFiles/trace_addr.dir/trace-instruction.cpp.s
+.PHONY : trace-instruction.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... trace_addr"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... trace-instruction.o"
+	@echo "... trace-instruction.i"
+	@echo "... trace-instruction.s"
 .PHONY : help
 
 

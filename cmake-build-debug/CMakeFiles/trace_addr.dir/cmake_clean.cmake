@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/trace_addr.dir/main.cpp.o"
+  "CMakeFiles/trace_addr.dir/trace-instruction.cpp.o"
   "trace_addr"
   "trace_addr.pdb"
 )

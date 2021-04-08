@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/trace_addr.dir/main.cpp.o -o trace_addr 
+/usr/bin/c++ -g CMakeFiles/trace_addr.dir/trace-instruction.cpp.o -o trace_addr 
