@@ -45,6 +45,7 @@ VOID ImageLoad(IMG img, VOID* v) {
 
     std::cout << "Iamge name: " << image_name << endl;
     std::cout << "Address space(" << image_name << "): 0x" << std::hex << img_low_address << " - 0x" << std::hex << img_high_address << endl;
+    OutFile << "Image base: " << "0x" << std::hex << img_low_address << endl;
 
     for (SEC sec = IMG_SecHead(img); SEC_Valid(sec);sec = SEC_Next(sec)) {
         std::cout << "Section: " << SEC_Name(sec) << " at address 0x" << std::hex << SEC_Address(sec) << " - 0x" << std::hex << SEC_Address(sec) +
