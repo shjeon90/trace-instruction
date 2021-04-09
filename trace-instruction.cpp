@@ -12,8 +12,10 @@ using std::endl;
 
 ofstream OutFile;
 string target_binary_name;
-ADDRINT low_address;
-ADDRINT high_address;
+ADDRINT img_low_address;
+ADDRINT img_high_address;
+ADDRINT txt_low_address;
+ADDRINT txt_high_address;
 
 BOOL check_main_section() {
     return FALSE;
@@ -21,8 +23,9 @@ BOOL check_main_section() {
 
 VOID record_trace(INS ins) {
     ADDRINT ip = INS_Address(ins);
-    string format = hexstr(ip) + " " + INS_Disassemble(ins);
-    OutFile << format << endl;
+    if ((txt_low_address <= ip) && (ip < txt_high_address)) {
+        OutFile << "0x" << std::hex << ip << " " << INS_Disassemble(ins) << endl;
+    }
 }
 
 VOID Trace(TRACE trace, VOID* v) {
@@ -36,14 +39,21 @@ VOID Trace(TRACE trace, VOID* v) {
 
 VOID ImageLoad(IMG img, VOID* v) {
     string image_name = IMG_Name(img);
+    if (image_name.find(target_binary_name) == string::npos) return;
+    img_low_address = IMG_LowAddress(img);
+    img_high_address = IMG_HighAddress(img);
 
-    if (image_name.compare(target_binary_name)) return;
-
-    std::cout << "Address space(" << image_name << "): 0x" << low_address << " - 0x" << high_address << endl;
+    std::cout << "Iamge name: " << image_name << endl;
+    std::cout << "Address space(" << image_name << "): 0x" << std::hex << img_low_address << " - 0x" << std::hex << img_high_address << endl;
 
     for (SEC sec = IMG_SecHead(img); SEC_Valid(sec);sec = SEC_Next(sec)) {
-        std::cout << "Section: " << SEC_Name(sec) << "at address 0x" << SEC_Address(sec) << " - 0x" << SEC_Address(sec) +
+        std::cout << "Section: " << SEC_Name(sec) << " at address 0x" << std::hex << SEC_Address(sec) << " - 0x" << std::hex << SEC_Address(sec) +
                 SEC_Size(sec) << endl;
+
+        if (SEC_Name(sec).find("text") != string::npos) {
+            txt_low_address = SEC_Address(sec);
+            txt_high_address = SEC_Address(sec) + SEC_Size(sec);
+        }
     }
 }
 
