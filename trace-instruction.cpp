@@ -71,19 +71,27 @@ INT32 Usage() {
 }
 
 VOID parse_binary_name(int argc, char* argv[]) {
-    string last_arg = argv[argc-1];
-    std::cout << last_arg << endl;
-    std::istringstream ss(last_arg);
-    string tmp;
-    std::vector<string> buffer;
-    int i = 0, ind_del = 0;
-    while(getline(ss, tmp, '/')) {
-        buffer.push_back(tmp);
-        if (!tmp.compare("--")) ind_del = i;
-        i++;
+    int ind_del = 0;
+
+    for (int i = 0;i < argc;++i) {
+        string arg = argv[i];
+        if (!arg.compare("--")) {
+            ind_del = i;
+            break;
+        }
     }
 
-    target_binary_name = buffer[ind_del + 1];
+    string bin_path = argv[ind_del+1];
+    std::cout << bin_path << endl;
+    std::istringstream ss(bin_path);
+    string tmp;
+    std::vector<string> buffer;
+
+    while(getline(ss, tmp, '/')) {
+        buffer.push_back(tmp);
+    }
+
+    target_binary_name = buffer[buffer.size() - 1];
     std::cout << "binary name: " << target_binary_name << endl;
 }
 
