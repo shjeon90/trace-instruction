@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-//#include <vector>
 #include "pin.H"
 
 using std::cerr;
@@ -43,7 +42,7 @@ VOID ImageLoad(IMG img, VOID* v) {
     img_low_address = IMG_LowAddress(img);
     img_high_address = IMG_HighAddress(img);
 
-    std::cout << "Iamge name: " << image_name << endl;
+    std::cout << "Image name: " << image_name << endl;
     std::cout << "Address space(" << image_name << "): 0x" << std::hex << img_low_address << " - 0x" << std::hex << img_high_address << endl;
     OutFile << "Image base: " << "0x" << std::hex << img_low_address << endl;
 
@@ -77,9 +76,14 @@ VOID parse_binary_name(int argc, char* argv[]) {
     std::istringstream ss(last_arg);
     string tmp;
     std::vector<string> buffer;
-    while(getline(ss, tmp, '/')) buffer.push_back(tmp);
+    int i = 0, ind_del = 0;
+    while(getline(ss, tmp, '/')) {
+        buffer.push_back(tmp);
+        if (!tmp.compare("--")) ind_del = i;
+        i++;
+    }
 
-    target_binary_name = buffer[buffer.size()-1];
+    target_binary_name = buffer[ind_del + 1];
     std::cout << "binary name: " << target_binary_name << endl;
 }
 
